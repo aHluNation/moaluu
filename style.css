@@ -11,7 +11,7 @@ html{
 
 body{
     background: #000;
-    color: #fff;
+    color: whitesmoke;
 }
 
 header{
@@ -32,10 +32,21 @@ header{
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 50px;
 }
 
 .logo{
     width: 140px;
+}
+
+.name{
+    color: #262626;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.p-name{
+    color: purple;
 }
 
 .nav ul li{
@@ -74,22 +85,35 @@ header{
 
 .container .hero .header-image img{
     width: 350px;
-    height: 500px;
-    border-radius: 50px;
+    height: 350px;
+    border-radius: 50%;
 }
 
 .container .header-text{
-    margin-top: 20%;
+    margin-top: 10%;
     font-size: 30px;
 }
 
 .container .header-text h1{
     font-size: 60px;
     margin-top: 20px;
+    color: whitesmoke;
 }
 
 .container .header-text h1 span{
     color: purple;
+}
+
+.btn.btn-2.btn-3{
+    display: flex;
+    align-items: center;
+    top: 0;
+    padding: 14px 60px;
+    font-size: 25px;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #000;
 }
 
 /* ------------------------------------------About------------------------------------------- */
@@ -120,7 +144,7 @@ header{
 .subtitle{
     font-size: 60px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .about-col-2 .tab-titles{
@@ -388,15 +412,24 @@ form .btn-2{
 }
 
 @media only screen and (max-width: 600px){
+    .logo{
+        width: 60px;
+    }
+
+    header{
+        height: fit-content;
+        margin-bottom: 20px;
+    }
+
     .container .hero .header-image img{
-        width: 150px;
-        height: 200px;
-        border-radius: 10px;
-        margin-top: 150px;
+        width: 250px;
+        height: 300px;
+        border-radius: 50%;
+        margin-top: 50px;
     }
 
     .container .header-text{
-        margin-top: 45%;
+        margin-top: 10%;
         font-size: 16px;
     }
     
@@ -437,6 +470,12 @@ form .btn-2{
         font-size: 40px;
     }
 
+    #about{
+        /* margin: 100px 0; */
+        padding: 0 0;
+        top: 0;
+    }
+
     .about-col-1, .about-col-2{
         flex-basis: 100%;
     }
@@ -460,5 +499,20 @@ form .btn-2{
 
     .copyright{
         font-size: 14px;
+    }
+
+    .about-col-1 img{
+        /* display: ; */
+    }
+
+    .header-image img{
+        
+    }
+
+    .container .hero{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: right;
     }
 }
