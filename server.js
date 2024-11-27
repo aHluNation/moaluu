@@ -10,7 +10,7 @@ app.use(express.urlencoded({extended:true}))
 app.use(express.static("public"))
 
 // connect to database
-mongoose.connect("mongodb://localhost:27017/portfolioDB",{
+mongoose.connect("mongodb://0.0.0.0:27017/portfolioDB",{
     useNewUrlParser:true,
     useUnifiedTopology:true,
 }).then(()=>{
