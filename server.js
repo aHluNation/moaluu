@@ -8,6 +8,7 @@ app.set('view engine','ejs')
 
 app.use(express.urlencoded({extended:true}))
 app.use(express.static("public"))
+app.use(express.json())
 
 // connect to database
 mongoose.connect("mongodb://0.0.0.0:27017/portfolioDB",{
@@ -32,14 +33,11 @@ app.get('/',(req,res)=>{
     res.render('index')
 })
 
-app.post('/',(req,res)=>{
-    let newMessage=new portfolioModel({
-        name:req.body.name,
-        email:req.body.email,
-        message:req.body.message
-    })
+app.post('/',async(req,res)=>{
+    let newMessage=new portfolioModel(req.body)
+    let result=await newMessage.save()
+    res.send(result)
 
-    newMessage.save()
     res.redirect('/')
 })
 
